@@ -14,7 +14,9 @@
                    ng-model="$ctrl.event.name"
                    ng-minlength="2"
                    required/>
-            <error ng-show="$ctrl.eventForm.name.$touched" data="$ctrl.eventForm.name.$error"></error>
+            <pre>{{$ctrl.eventForm.name | json}}</pre>
+            <!--<error ng-show="$ctrl.eventForm.name.$touched" data="$ctrl.eventForm.name.$error"></error>-->
+
             <!--<span ng-show="$ctrl.eventForm.name.$touched">-->
                 <!--<span class="help-block" ng-show="$ctrl.eventForm.name.$error.required">-->
                     <!--Name is required-->
@@ -96,3 +98,5 @@
         </div>
     </div>
 </form>
+
+<pre>{{$ctrl.eventForm | json}}</pre>
