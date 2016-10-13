@@ -11,11 +11,19 @@ function EventListController() {
     vm.events = [
         {
             title: 'EcmaScriptDay',
-            description: 'The best ever conference'
+            description: `The best ever conference
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Asperiores aspernatur consectetur, doloribus labore nisi
+            non nostrum, provident qui quidem quo recusandae
+            suscipit velit, veniam! Adipisci non omnis quia tempore voluptate.`
         },
         {
             title: 'Frontend Meet up',
-            description: 'Party with HTML, CSS and JS'
+            description: `Party with HTML, CSS and JS The best ever conference
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Asperiores aspernatur consectetur, doloribus labore nisi
+            non nostrum, provident qui quidem quo recusandae
+            suscipit velit, veniam! Adipisci non omnis quia tempore voluptate.`
         }
     ];
 }

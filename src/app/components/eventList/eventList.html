@@ -1,6 +1,8 @@
-<h1>All Events</h1>
-<ul class="list-events">
-    <li class="list-events__item" ng-repeat="event in $ctrl.events">
+<div class="page-header">
+    <h1>All Events</h1>
+</div>
+<ul class="list-events container marketing">
+    <li ng-repeat="event in $ctrl.events">
         <event data="event"></event>
     </li>
 </ul>

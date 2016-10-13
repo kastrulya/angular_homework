@@ -1,0 +1,7 @@
+<pre>{{$ctrl|json}}</pre>
+<span class="help-block" ng-show="$ctrl.error.data">
+   {{$ctrl.error}}
+</span>
+<span class="help-block" ng-show="$ctrl.eventForm.name.$error.minlength">
+    Name should contain more than 2 symbols
+</span>
