@@ -6,7 +6,10 @@ import appModule from '../../app.module';
 import './eventCreating.scss';
 import template from './eventCreating.html';
 
-function EventCreatingController() {}
+function EventCreatingController() {
+    let vm = this;
+    vm.event = {};
+}
 
 appModule.component('eventCreating', {
     template,

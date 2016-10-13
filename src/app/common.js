@@ -1,2 +1,2 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import 'angular';
+import 'angular-ui-router';

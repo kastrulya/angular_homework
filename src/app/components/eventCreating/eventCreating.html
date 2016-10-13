@@ -1,1 +1,17 @@
-<h1>Create new event</h1>
+<form
+        novalidate
+        class="simple-form">
+
+    Name: <input type="text"
+                 ng-model="$ctrl.event.name" />
+    <br />
+    Date: <input type="date"
+                   ng-model="$ctrl.event.date" />
+    <br />
+    <input type="submit" value="Create event">
+
+</form>
+
+<div class="new-event">
+    <h3>{{$ctrl.event | json}}</h3>
+</div>

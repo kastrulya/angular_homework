@@ -1,7 +1,10 @@
-const localEventsModule = angular.module('localEvents', [uiRouter, localEventsModule]);
-localEventsModule.config(config);
-localEventsModule.run($state => {
+import config from 'app.config.js';
+
+const homeEventsModule = angular.module('homeEvents', ['ui.router']);
+homeEventsModule.config(config);
+
+homeEventsModule.run($state => {
     $state.go('events');
 });
 
-export default localEventsModule;
+export default homeEventsModule;

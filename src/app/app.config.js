@@ -9,6 +9,7 @@ export default $stateProvider => {
             template: '<event-creating></event-creating>'
         })
         .state('detail', {
-            // url: '/detail:?'
+             url: '/detail',
+            template: '<h1>There will be details! </h1>'
         })
 };
