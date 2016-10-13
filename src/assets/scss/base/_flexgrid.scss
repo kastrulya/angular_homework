@@ -1,0 +1,117 @@
+$gutter: 20px;
+$items: 12;
+$breaks: ( xxs: 0,
+        xs: $min-break-xs,
+        sm: $min-break-sm,
+        md: $min-break-md,
+        lg: $min-break-lg,
+);
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: floor(($gutter / -2));
+  margin-right: ceil(($gutter / -2));
+}
+
+.row--center {
+  justify-content: center;
+}
+
+
+// Set default width for every column
+@each $size, $media in $breaks {
+  $item: 1;
+  @while $item <= $items {
+    .col-#{$size}-#{$item} {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    $item: $item + 1;
+  }
+}
+
+// Set column width in media queries
+@each $size, $media in $breaks {
+  $item: 1;
+  @while $item <= $items{
+
+    .col-#{$size}-#{$item} {
+      padding-left: ceil(($gutter / 2));
+      padding-right: floor(($gutter / 2));
+
+
+      @if $media != 0 {
+        @media(min-width: $media){
+          flex-basis: 100% / ($items / $item );
+          max-width: 100% / ($items / $item );
+        }
+      } @else {
+        flex-basis: 100% / ($items / $item );
+        max-width: 100% / ($items / $item );
+      }
+
+    }
+
+
+    .col-#{$size}-offset-#{$item}{
+
+      @if $media != 0 {
+        @media(min-width: $media) {
+          margin-left: 100% / ($items / $item );
+        }
+      } @else {
+        margin-left: 100% / ($items / $item );
+      }
+
+    }
+
+    $item: $item + 1;
+  }
+}
+
+.container,
+%container{
+  padding-left: ceil(($gutter / 2));
+  padding-right: floor(($gutter / 2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
+//  @media(min-width: $min-break-sm){
+//    width: $container-sm;
+//  }
+//  @media(min-width: $min-break-md){
+//    width: $container-md;
+//  }
+  @media(min-width: $min-break-lg){
+    width: $container-lg;
+  }
+}
+
+// extend container without media queries
+.container--fluid{
+  @extend %container;
+}
+
+// extend full-width container
+// and add flex context
+.container--flex-fluid{
+  @extend %container;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+// extend container with all media queries
+// and add flex context
+.container--flex{
+  @extend .container;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media (max-width: $min-break-md){
+  .order-md-1 { order: 1; }
+  .order-md-2 { order: 2; }
+}

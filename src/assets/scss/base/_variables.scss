@@ -1,0 +1,36 @@
+$footerSize: 200px;
+
+$mainFont: 'PT Sans', sans-serif;;
+$titleFont: 'Roboto Slab', serif;
+
+//----------theme color----------//
+$primaryColor: #1a265c;
+$primaryColorFont: white;
+
+$secondaryColor: #2980B9;
+$accentColor: #3498DB;
+$alternativeAccentColor: #E74C3C;
+
+$darken: #505050;
+$lighten: #ECF0F1;
+//----------theme color----------//
+
+$baseFontSize: 14px;
+
+$container-sm: 750px;
+$container-md: 970px;
+$container-lg: 1170px;
+
+$min-break-xs: 480px;
+$min-break-sm: 768px;
+$min-break-md: 992px;
+$min-break-lg: 1200px;
+
+$max-break-xxs: $min-break-xs - 1;
+$max-break-xs: $min-break-sm - 1;
+$max-break-sm: $min-break-md - 1;
+$max-break-md: $min-break-lg - 1;
+
+
+
+$page-bg: #f1f1f1;
