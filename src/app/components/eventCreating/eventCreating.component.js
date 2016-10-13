@@ -9,6 +9,7 @@ import template from './eventCreating.html';
 function EventCreatingController() {
     let vm = this;
     vm.event = {};
+    vm.eventForm = {};
 }
 
 appModule.component('eventCreating', {

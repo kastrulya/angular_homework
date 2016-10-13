@@ -1,17 +1,67 @@
 <form
+        name="$ctrl.eventForm"
         novalidate
         class="simple-form">
 
-    Name: <input type="text"
-                 ng-model="$ctrl.event.name" />
+    Name:
+    <input type="text"
+           name="name"
+           ng-model="$ctrl.event.name"
+           ng-minlength="2"
+           required />
+    <span ng-show="$ctrl.eventForm.name.$touched">
+        <span ng-show="$ctrl.eventForm.name.$error.required">
+            Name is required
+        </span>
+        <span ng-show="$ctrl.eventForm.name.$error.minlength">
+            Name should contain more than 2 symbols
+        </span>
+    </span>
+
+
+    <br/>
+    Contact email:
+    <input type="email"
+           name="email"
+           ng-model="$ctrl.event.email"
+           required />
+    <span ng-show="$ctrl.eventForm.email.$touched">
+        <span ng-show="$ctrl.eventForm.email.$error.required">
+            Email is required
+        </span>
+        <span ng-show="$ctrl.eventForm.email.$error.email">
+            Enter correct email
+        </span>
+    </span>
+
     <br />
-    Date: <input type="date"
-                   ng-model="$ctrl.event.date" />
+    Date:
+    <input type="date"
+           ng-model="$ctrl.event.date"/>
+    <br/>
+    Add comments:
+    <input type="checkbox"
+           name="isComment"
+           ng-model="$ctrl.event.isComment" />
+    <br/>
+
+    <input type="text"
+           name="comment"
+           ng-model="$ctrl.event.comment"
+           ng-required="$ctrl.event.isComment" />
+    <span ng-show="$ctrl.eventForm.comment.$touched">
+        <span ng-show="$ctrl.eventForm.comment.$error.required">
+            Comment is required
+        </span>
+    </span>
     <br />
-    <input type="submit" value="Create event">
+
+    <input type="submit"
+           value="Create event" />
 
 </form>
 
 <div class="new-event">
-    <h3>{{$ctrl.event | json}}</h3>
+    <pre>{{$ctrl.event | json}}</pre>
+    <pre>{{$ctrl.eventForm.isComment | json}}</pre>
 </div>

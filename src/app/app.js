@@ -1,5 +1,4 @@
 import '../assets/scss/bundle.scss';
-import './parts/footer/footer.module';
 
 //import config from './app.config';
 import './app.module';
